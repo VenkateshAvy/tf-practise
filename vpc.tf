@@ -8,6 +8,7 @@ resource "aws_vpc" "ibm-vpc" {
 }
 resource "aws_subnet" "ibm-web-subnet" {
   vpc_id     = aws_vpc.ibm-vpc.id
+  map_public_ip_on_launch = "true"
   cidr_block = "10.0.1.0/24"
 
   tags = {
